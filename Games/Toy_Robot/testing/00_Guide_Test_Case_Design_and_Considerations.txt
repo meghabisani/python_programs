@@ -1,0 +1,40 @@
+********************************************************************************************************************************
+******************************This documents features and list the multiple conditions, Test Cases (TS's) considerations. These considerations are abstracted from the requirement document which was provided with the assignment**********************************************************************************************************************
+********************************************************************************************************************************
+
+1)  Valid and Invalid Test cases are designed for quick and easy integration of the regressions use cases, as when any change is made to the software.
+2)  Test case includes vast permutations of the possible valid and invalid (unknown) commands in order to test positive and negative flows.
+3)  All the commands except MOVE, REPORT, PLACE, LEFT and RIGHT considered as unknown commands and thereby no change or action considered.
+4)  Software will ignore the following commands - MOVE, REPORT, LEFT and RIGHT, until a Robot is placed on the table with valid PLACED command.
+5)  Commands that will force Robot to fall off the table will be ignored and the Software will then wait for the next valid command
+6)  Software will NOT return any result until valid REPORT command is given.
+
+
+Logging -->
+7)  Centralised logging is provided with software under '/Toy_Robot/testing' directory, file named monitor.log
+8)  For every Automated test, Software will delete the older 'monitor.log' and will create a new report with the same file name.
+9)  For manual tests, which are performed by Single Files, 'monitor.log' will be appended with the info rather than creating a new file.
+
+
+Automated Functional Testing --> 
+10)  Test cases (TC's) placed in directory '/Toy_Robot/testing/Test_Cases' comprises of the Valid and Invalid TC's
+11) File 'automated_test.py' will perform the test with all the TC's placed under '/Toy_Robot/testing/Test_Cases' and will report the results in '/Toy_Robot/testing/monitor.log'
+12) Time stamp with input TC name, Input command and output report is carefully logged in this file to provide just enough info to be useful and give the indications of the pass and fail TC's
+13) New 'monitor.log' will be created for every automated test execution; this will delete the earlier monitor.log
+14) Automated tests are designed for easy and quick regression tests. It involve Integrated as well as unit tests with maximum code coverage.
+15) How to perform automated test on all input files --> Go to command prompt and enter below
+		python automated_test.py
+Pre-requisites- 
+	a) Python 3 is installed and included in 'Path' environment variables.
+	b) Current directory should be 'Toy_Robot\testing' as it is referencing dependent files and folders
+
+
+Non-Automated Function Testing -->
+16) Delivered Software also gives the ability to provide single file as input and provide the output of the commands from input in monitor.log as well as on console. 
+17) monitor.log will not be removed in this case but will be appended should it have the history from previous executions.
+18) This decision is made to support the comparison of the outputs, in case any of the automated tests fails. This was log of the failed automated tests is retained in the monitor.log
+19) How to perform test with single file --> Go to command prompt and enter below
+		python toy_robot.py filename.txt
+Pre-requisites- 
+	a) Python 3 is installed and included in 'Path' environment variables.
+	

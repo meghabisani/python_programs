@@ -1,0 +1,190 @@
+=========================================================================================================
+
+Input File Name : TC01_Valid_Mix_Inputs | Test Case Type : Valid/Positive | Expected Output : 0,0,SOUTH
+
+Scenario : This is a positive test case, verifying the functioning of the flow when all valid inputs are provided.
+Flow includes Placement of Toy, Changing Direction, Moving, & Reporting of the current place.
+
+Commands -->
+
+PLACE 1,1,NORTH
+LEFT
+RIGHT
+LEFT
+MOVE
+LEFT
+MOVE
+REPORT
+
+=========================================================================================================
+
+Input File Name : TC02_Valid_Inputs_OnlyMove_walk-off_table | Test Case Type : Valid/Positive | Expected Output : 1,0,SOUTH
+
+Scenario : This is a positive test case, verifying that toy should not walk-off the table.
+
+Commands --> 
+
+
+PLACE 1,1,SOUTH
+MOVE
+MOVE
+MOVE
+MOVE
+REPORT
+
+=========================================================================================================
+
+
+Input File Name : TC03_Valid_Inputs_After_Invalid_Inputs | Test Case Type : Valid/Positive | Expected Output : 1,1,WEST
+
+Scenario : This is a positive test case, verifying the check which ignore all INVALID commands before a valid 'PLACE' command.
+
+Commands --> 
+
+MOVE
+LEFT
+PLACE 1,2,SOUTH
+RIGHT
+LEFT
+MOVE
+RIGHT
+REPORT
+=========================================================================================================
+
+
+Input File Name : TC04_Valid_Inputs_Multiple_Place | Test Case Type : Valid/Positive | Expected Output : 3,4,EAST
+
+Scenario : This is a positive test case, verifying the output when more than 1 valid Place command is received.
+
+Commands --> 
+
+
+PLACE 2,2,NORTH
+MOVE
+PLACE 3,4,EAST
+REPORT
+
+
+=========================================================================================================
+
+Input File Name : TC05_Valid_Inputs_Basic_Move | Test Case Type : Valid/Positive | Expected Output : 0,1,NORTH
+
+Scenario : This is a positive test case, verifying the basic Move input.
+
+Commands --> 
+
+
+PLACE 0,0,NORTH
+MOVE
+REPORT
+
+=========================================================================================================
+
+Input File Name : TC06_Valid_Inputs_Basic_Turn | Test Case Type : Valid/Positive | Expected Output : 4,4,NORTH
+
+Scenario : This is a positive test case, verifying the basic Direction/Turn input.
+
+Commands --> 
+
+
+PLACE 4,4,EAST
+LEFT
+REPORT
+
+
+=========================================================================================================
+
+Input File Name : TC07_Valid_Inputs_Illegal_Place | Test Case Type : Valid/Positive | Expected Output : 3,4,SOUTH
+
+Scenario : This is a positive test case, verifying the output when 1st invalid Place command and then valid Place command is received.
+
+Commands --> 
+
+
+PLACE 9,9,NORTH
+MOVE
+LEFT
+PLACE 3,4,EAST
+RIGHT
+REPORT
+
+
+=========================================================================================================
+
+Input File Name : TC08_Valid_Inputs_Illegal_Place_02 | Test Case Type : Valid /Positive| Expected Output : 0,2,WEST
+
+Scenario : This is a positive test case, verifying the output when 1st valid Place command and then invalid Place command is received.
+
+Commands --> 
+
+
+PLACE 1,2,WEST
+MOVE
+LEFT
+PLACE 3,5,EAST
+RIGHT
+REPORT
+
+
+=========================================================================================================
+
+Input File Name : TC09_Invalid_Inputs_Unplaced | Test Case Type : Negative | Expected Output : No Output
+
+Scenario : This is a negative test case, verifying that until robot is placed, other any command to be ignored.
+
+Commands --> 
+
+
+MOVE
+MOVE
+LEFT
+RIGHT
+MOVE
+REPORT
+
+=========================================================================================================
+
+Input File Name : TC10_Invalid_Inputs_Illegal_Place | Test Case Type : Negative | Expected Output : No Output
+
+Scenario : This is a negative test case, verifying that until valid place, toy will not be placed and other any command to be ignored.
+
+Commands --> 
+
+
+PLACE 7,2,EAST
+MOVE
+RIGHT
+REPORT
+
+=========================================================================================================
+
+Input File Name : TC11_Invalid_Inputs_Invalid_Format | Test Case Type : Negative | Expected Output : No Output
+
+Scenario : This is a negative test case, verifying that valid commands in Invalid formats are not accepted.
+Commands in small letters are not allowed and will ignored.
+
+Commands --> 
+
+
+Place 1,2,North
+MoVe
+RepORT
+
+=========================================================================================================
+
+Input File Name : TC12_Invalid_Inputs_Illegal_Place_02 | Test Case Type : Negative | Expected Output : No Output
+
+Scenario : This is a negative test case, all invalid places will ignored, toy will not be placed and other any command to be ignored.
+
+Commands --> 
+
+MOVE
+LEFT
+PLACE 5,2,SOUTH
+MOVE
+PLACE 7,2,EAST
+MOVE
+RIGHT
+REPORT
+
+=========================================================================================================

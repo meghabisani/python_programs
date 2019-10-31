@@ -1,0 +1,19 @@
+****************************************************************************************************************************************************************************************************************************************************************
+*****This document describes the approach considered for Design and Development for this piece of Code Delivered**********************************************************************************************************************
+********************************************************************************************************************************
+********************************************************************************************************************************
+
+1. Approach adapted for Design and Development is heavily dependent on the supportive document provided by the project during assignment.
+2. Assignment is to design a Code to move the Robot across 5*5, 2 dimensional table, with ability to move ‘1 unit’ at a time in choice of direction. Security checks are built-in to ignore the commands, which should force Robot to fall off the table.
+3. Any command except valid defined Commands will be ignored. #List of valid commands is available in '00_Guide_Test_Case_Design_and_Considerations.txt' under /Toy_Robot/testing directory.
+4. All Commands until Robot is placed on Table will be ignored.
+5. Python version 3.x is required to execute the software, unit and integrated test cases.
+Python 2.7 can be used, but by importing certain modules which are out of scope for this delivery.
+There are no dependent libraries needed after Python version 3.x
+6. Software is built to respond to the File based Input.
+7. Further details on Logging, Unit Tests and Integrations tests are available in 'Toy_Robot/testing/00_Guide_Test_Case_Design_and_Considerations.txt'
+8 No output returned when; 
+	a. If invalid set of arguments are provided via file based input
+	b. If valid set of arguments are provided before placing the Robot on the table.
+
+
